@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2023 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -37,6 +37,10 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+TIM_HandleTypeDef htim2;
+TIM_HandleTypeDef htim3;
+
+UART_HandleTypeDef huart2;
 
 /* USER CODE END ET */
 
@@ -50,6 +54,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -58,28 +64,26 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define Ped_button_Pin GPIO_PIN_0
-#define Ped_button_GPIO_Port GPIOA
-#define Button1_Pin GPIO_PIN_1
-#define Button1_GPIO_Port GPIOA
-#define Button2_Pin GPIO_PIN_4
-#define Button2_GPIO_Port GPIOA
-#define Ped_buzzer_Pin GPIO_PIN_6
-#define Ped_buzzer_GPIO_Port GPIOA
-#define Button3_Pin GPIO_PIN_0
-#define Button3_GPIO_Port GPIOB
-#define Ped_Green_Pin GPIO_PIN_10
-#define Ped_Green_GPIO_Port GPIOB
-#define Ped_Red_Pin GPIO_PIN_8
-#define Ped_Red_GPIO_Port GPIOA
-#define Sys1_Red_Pin GPIO_PIN_10
-#define Sys1_Red_GPIO_Port GPIOA
-#define Sys1_Green_Pin GPIO_PIN_3
-#define Sys1_Green_GPIO_Port GPIOB
-#define Sys2_Red_Pin GPIO_PIN_4
-#define Sys2_Red_GPIO_Port GPIOB
-#define Sys_Green_Pin GPIO_PIN_5
-#define Sys_Green_GPIO_Port GPIOB
+#define A0_Pin GPIO_PIN_0
+#define A0_GPIO_Port GPIOA
+#define A1_MAN_Pin GPIO_PIN_1
+#define A1_MAN_GPIO_Port GPIOA
+#define A2_TUNING_Pin GPIO_PIN_4
+#define A2_TUNING_GPIO_Port GPIOA
+#define A3_SET_Pin GPIO_PIN_0
+#define A3_SET_GPIO_Port GPIOB
+#define D6_PEDESTRIAN_Pin GPIO_PIN_10
+#define D6_PEDESTRIAN_GPIO_Port GPIOB
+#define D7_PEDESTRIAN_Pin GPIO_PIN_8
+#define D7_PEDESTRIAN_GPIO_Port GPIOA
+#define D2_LED_RED1_Pin GPIO_PIN_10
+#define D2_LED_RED1_GPIO_Port GPIOA
+#define D3_LED_GREEN1_Pin GPIO_PIN_3
+#define D3_LED_GREEN1_GPIO_Port GPIOB
+#define D5_LED_GREEN2_Pin GPIO_PIN_4
+#define D5_LED_GREEN2_GPIO_Port GPIOB
+#define D4_LED_RED2_Pin GPIO_PIN_5
+#define D4_LED_RED2_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
